@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+# Trevor Peck's ePortfolio
+## Part of CS-499: CS Capstone
+### Self-assessment / Introduction:
+&emsp;I've been through both in-person schooling and online schooling, and I can say that over the course of my time in the computer science program at Southern New Hampshire University, I have been faced with a unique set of challenges that have taught me to be self-sufficient and find my own way. The difference between the first weeks of the program and the last is indicative of a strong ability to create things I haven't learned in school. I'd say my number one skill is my ability to dive into new languages and libraries, and quickly put them to use. My strong foundations in my understanding of time and space complexity, data structures, and security assessment allows me to quickly prototype projects because I have a good sense of the "big picture". In addition, my ability to understand project requirements and communicate effectively helps me to avoid wasting time rewriting code; I can proudly say I have never had to rewrite anything because of misunderstood requirements. This final course has allowed me to go back to some previous prototype projects, and add some impressive functionality. This final course has very effectively taught me that there is always room for improvement, and will directly translate to my ability to add feature updates and improve algorithms in a workplace setting.
 
-You can use the [editor on GitHub](https://github.com/MeatMattress/compSciCapstone/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Updating projects to showcase ability
+&emsp;I've chosen to update my artifacts using three categories of improvement in order to showcase my ability to refine existing projects: Software engineering & design, data structures & algorithms, and database utilization. The artifacts chosen are some of the first I've created, and they were created just for hobby outside of school.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+&emsp;The first submission requirement of the course is an informal code review on my artifacts pre-update. I'll explain and showcase the artifacts below, and the reviews can be seen [here](https://youtu.be/DHHSoQDXaq4/) for my mycelial growth simulation, and [here](https://youtu.be/THoCmG04SXI/) for my tip calculator / tracker.
 
-### Markdown
+#### Category 1: Software Engineering & Design
+&emsp;This update was applied to my tip calculator for my current workplace. I'm the manager of a brunch restaurant, and at this restaurant they pool tips. I noticed that the younger servers were having a difficult time figuring out how much everybody made when servers leave early. This update addressed that problem. I've added functionality to allow servers to leave early, let them get exactly how much they made before they leave, and still retain data pertaining to the rest of the servers & their tipout, so that at the end of the day, the servers aren't stuck at the counter trying to figure it out. I chose to include this as an artifact because out of all of them, it's the most practically useful. You can find a running version of this site at [https://trevorpeckportfolio.com/tips](https://trevorpeckportfolio.com/tips). From updating this artifact, I learned that user interface interaction is key to usability. I spent a bit of time making this easy for the user by using javascript that updates the HTML upon user action, and notifies the user of any mistakes made. The challenges I faced in this update were mainly because Javascript is not type-safe. It was really annoying having to manually parse every number as a float, rather than just specify variable types upon instantiation. However, perserverence trumps frustration.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### Category 2: Algorithms and Data Structures
+&emsp;This update is personally interesting to me because it pertains to a past hobby of mine- growing gourmet mushrooms from scratch, and selling them at our farmers market. This is a simulation of the beginning stages of mushroom development- spore germination. This artifact utilizes a technique called **diffusion-limited aggregation** (DLA) in order to simulate growth. This is a process that occurs naturally in nature, such as the development of snowflakes. [Click here fore more information about DLA.](https://en.wikipedia.org/wiki/Diffusion-limited_aggregation) Initially, this algorithm was written so that every particle in the simulation checked every other particle for collision. This meant that the algorithm had an exponential time-complexity; O(n<sup>2</sup>). This update involved utilization of quad-trees, a common algorithm used in particle simulations. Quad trees split the simulation into multiple quadrants, where a maximum of N particles may occupy a given quadrant. if the particles exceeds N, the quadrant subdivides and reinserts the particles held within. Each particle only checks the quadrant it occupies, therefore reducing the time complexity to O(log N) in the usual case. [Click here for more information about Quad-trees.](https://en.wikipedia.org/wiki/Quadtree) I chose to include this artifact in my portfolio to showcase my ability to implement advanced algorithms in order to improve time-complexity in a given program using outside research, turned into code. Please see [https://trevorpeckportfolio.com/quadtree](https://trevorpeckportfolio.com/quadtree) and click once anywhere on screen to start the simulation. You may toggle the visualization of the quad-tree and walking particles with the corner buttons. The main challenge I conquered in this project was creating the algorithm itself, but using OOP techniques. The way I overcame this challenge was by whiteboarding the problem, and breaking it down into modular components. I find that whiteboarding is my best friend when it comes to advanced algorithms.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MeatMattress/compSciCapstone/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+#### Category 3: Database integration
+&emsp;This artifact adds another feature to the first artifact, the tip tracker for my workplace. This update involved creating a database that the user may submit data to that stores detailed information about the tips made for the day. The database can also be accessed in order to pull said data, and graph it using a javascript library, Chart.js. I chose to include this artifact once again because it is practical, and I knew I would find it interesting to see how the tips made changed over time. I predict that because we are a tourist-centered place (Hilton Head Island, SC), that we will see an ebb and flow upon the change of seasons. I'm eager to see if my prediction is correct. This project can be seen [here at https://trevorpeckportfolio.com/tips.](https://trevorpeckportfolio.com/tips). Please note that this artifact is separate from my actual used version, and is populated with semi-random data in order to demonstrate functionality. This is meant to be used over the course of time but is still brand new, therefore I chose to populate the database for demonstration purposes. You may simply click on **Show Statistics** from the first page in order to see some plotted data, in the form of a polar area chart, a pie chart, and a line chart of tips over time. The first two charts are't meant to be insightful, but rather for demonstration of ability. The tips over time is considered to be the main source of significance. The main challenge that I faced in the creation of these features was the creation of an outside server in order to separate the user from the database. I did this using Node.Js as a literal node for the user to access. I have never used Node.js before so this was a cool experience for me, as I know I'll definitely be using it again in the future so I'm glad I learned how to utilize it in conjunction with Ajax to post and get requested data from an outside database.
